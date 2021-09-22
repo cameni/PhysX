@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpAABBManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseABP.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseMBP.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseSap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseSapAux.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseShared.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpMBPTasks.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpSAPTasks.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include\BpAABBManager.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include\BpAABBManagerTasks.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include\BpBroadPhase.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include\BpBroadPhaseUpdate.h">
+      <Filter>includes</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseABP.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseMBP.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseMBPCommon.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseSap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseSapAux.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpBroadPhaseShared.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpMBPTasks.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\src\BpSAPTasks.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="includes">
+      <UniqueIdentifier>{E63D568C-89CD-3727-A816-5C008083D75A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{328F25D6-48B6-36F3-9038-9342E295BE37}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

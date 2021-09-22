@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\PsAllocator.cpp">
+      <Filter>src\src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\PsAssert.cpp">
+      <Filter>src\src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\PsFoundation.cpp">
+      <Filter>src\src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\PsMathUtils.cpp">
+      <Filter>src\src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\PsString.cpp">
+      <Filter>src\src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\PsTempAllocator.cpp">
+      <Filter>src\src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\PsUtilities.cpp">
+      <Filter>src\src</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsAtomic.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsCpu.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsFPU.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsMutex.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsPrintString.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsSList.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsSocket.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsSync.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsThread.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\src\windows\PsWindowsTime.cpp">
+      <Filter>src\src\windows</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\Ps.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsAlignedMalloc.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsAlloca.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsAllocator.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsAoS.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsArray.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsAtomic.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsBasicTemplates.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsBitUtils.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsBroadcast.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsCpu.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsFoundation.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsFPU.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsHash.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsHashInternals.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsHashMap.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsHashSet.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsInlineAllocator.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsInlineAoS.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsInlineArray.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsIntrinsics.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsMathUtils.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsMutex.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsPool.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsSList.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsSocket.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsSort.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsSortInternals.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsString.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsSync.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsTempAllocator.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsThread.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsTime.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsUserAllocated.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsUtilities.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsVecMath.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsVecMathAoSScalar.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsVecMathAoSScalarInline.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsVecMathSSE.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsVecMathUtilities.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsVecQuat.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\PsVecTransform.h">
+      <Filter>src\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxFoundation.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\foundation\PxAssert.h">
+      <Filter>include\foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\foundation\PxFoundationConfig.h">
+      <Filter>include\foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\foundation\PxMathUtils.h">
+      <Filter>include\foundation</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\windows\PsWindowsAoS.h">
+      <Filter>src\include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\windows\PsWindowsFPU.h">
+      <Filter>src\include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\windows\PsWindowsInclude.h">
+      <Filter>src\include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\windows\PsWindowsInlineAoS.h">
+      <Filter>src\include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\windows\PsWindowsIntrinsics.h">
+      <Filter>src\include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include\windows\PsWindowsTrigConstants.h">
+      <Filter>src\include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\Px.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxAllocatorCallback.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxProfiler.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxSharedAssert.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxBitAndData.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxBounds3.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxErrorCallback.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxErrors.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxFlags.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxIntrinsics.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxIO.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxMat33.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxMat44.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxMath.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxMemory.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxPlane.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxPreprocessor.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxQuat.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxSimpleTypes.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxStrideIterator.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxTransform.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxUnionCast.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxVec2.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxVec3.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\PxVec4.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\pxshared\include\foundation\windows\PxWindowsIntrinsics.h">
+      <Filter>shared\include\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\pxshared\include\foundation\PxPos.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\pxshared\include\foundation\PxRootTransform.h">
+      <Filter>shared\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\resource_x64\PhysXFoundation.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{9AA36CC6-7E08-3AED-90F6-343A2937F3CD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\foundation">
+      <UniqueIdentifier>{5F8132BF-5D72-3AB1-9516-37530512341B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{E6255399-948F-3178-825E-7CDE569660CA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared">
+      <UniqueIdentifier>{524A369D-BCBF-3961-9B9F-CCC826C6D9B5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\include">
+      <UniqueIdentifier>{EC5E577B-9328-351D-81A7-B5498878E560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shared\include\windows">
+      <UniqueIdentifier>{4D361627-7A35-354A-91B7-6D90D3811512}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{328F25D6-48B6-36F3-9038-9342E295BE37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\include">
+      <UniqueIdentifier>{F61AB864-9F77-30E6-9FF8-21188D7A0793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\include\windows">
+      <UniqueIdentifier>{91857DDF-5DB5-3F30-94FA-A30F62A20E4E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\src">
+      <UniqueIdentifier>{ECA915F3-D1E1-3386-9817-BE623FEC788B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\src\windows">
+      <UniqueIdentifier>{9C28BB28-359B-3878-88EA-7855863E12A8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

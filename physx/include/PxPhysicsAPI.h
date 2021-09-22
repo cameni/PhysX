@@ -61,6 +61,7 @@ Alternatively, one can instead directly #include a subset of the below files.
 #include "foundation/PxQuat.h"
 #include "foundation/PxSimpleTypes.h"
 #include "foundation/PxStrideIterator.h"
+#include "foundation/PxRootTransform.h"
 #include "foundation/PxTransform.h"
 #include "foundation/PxUnionCast.h"
 #include "foundation/PxVec2.h"

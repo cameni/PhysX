@@ -90,7 +90,7 @@ public:
 
 	@see PxRigidDynamic.setGlobalPose() PxRigidStatic.setGlobalPose()
 	*/
-	virtual		PxTransform 	getGlobalPose()		const = 0;
+	virtual		PxRootTransform 	getGlobalPose()		const = 0;
 
 	/**
 	\brief Method for setting an actor's pose in the world.
@@ -117,7 +117,7 @@ public:
 
 	@see getGlobalPose()
 	*/
-	virtual		void			setGlobalPose(const PxTransform& pose, bool autowake = true) = 0;
+	virtual		void			setGlobalPose(const PxRootTransform& pose, bool autowake = true) = 0;
 
 
 /************************************************************************************************/

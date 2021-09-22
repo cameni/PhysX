@@ -29,6 +29,7 @@
 
 #include "foundation/PxMat33.h"
 #include "foundation/PxQuat.h"
+#include "foundation/PxPos.h"
 #include "foundation/PxTransform.h"
 #include "PsUtilities.h"
 #include "PsUserAllocated.h"
@@ -46,6 +47,11 @@ bool checkValid(const float& f)
 bool checkValid(const PxVec3& v)
 {
 	return PxIsFinite(v.x) && PxIsFinite(v.y) && PxIsFinite(v.z);
+}
+
+bool checkValid(const PxPos& p)
+{
+	return PxIsFinite(p.x) && PxIsFinite(p.y) && PxIsFinite(p.z);
 }
 
 bool checkValid(const PxTransform& t)

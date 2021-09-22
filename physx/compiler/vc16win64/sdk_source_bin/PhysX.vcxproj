@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="checked|x64">
+      <Configuration>checked</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="profile|x64">
+      <Configuration>profile</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8540AD1D-FF71-30E0-9C76-E58A31047976}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>PhysX</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='debug|x64'">PhysX.dir\debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug|x64'">PhysX_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='debug|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='checked|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='checked|x64'">PhysX.dir\checked\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='checked|x64'">PhysX_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='checked|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='checked|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='checked|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='profile|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='profile|x64'">PhysX.dir\profile\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='profile|x64'">PhysX_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='profile|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='profile|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='profile|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='release|x64'">PhysX.dir\release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='release|x64'">PhysX_64</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>UninitializedLocalUsageCheck</BasicRuntimeChecks>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_DEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_DEBUG=1;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR="debug";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\PhysX_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_DEBUG=1;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR=\"debug\";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\LowLevel_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\LowLevelAABB_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\LowLevelDynamics_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\PhysXTask_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\SceneQuery_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\SimulationController_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\PhysXPvdSDK_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\PhysXCommon_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\debug\PhysXFoundation_64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>PhysXFoundation_64.dll;PhysXCommon_64.dll</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/debug/PhysX_64.lib</ImportLibrary>
+      <ProgramDataBaseFile>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/debug/PhysX_64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='checked|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR="checked";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\PhysX_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_CHECKED=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR=\"checked\";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\LowLevel_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\LowLevelAABB_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\LowLevelDynamics_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\PhysXTask_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\SceneQuery_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\SimulationController_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\PhysXPvdSDK_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\PhysXCommon_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\checked\PhysXFoundation_64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>PhysXFoundation_64.dll;PhysXCommon_64.dll</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/checked/PhysX_64.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/checked/PhysX_64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='profile|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_PROFILE=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR="profile";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\PhysX_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_PROFILE=1;PX_NVTX=0;PX_SUPPORT_PVD=1;CMAKE_INTDIR=\"profile\";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\LowLevel_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\LowLevelAABB_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\LowLevelDynamics_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\PhysXTask_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\SceneQuery_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\SimulationController_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\PhysXPvdSDK_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\PhysXCommon_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\profile\PhysXFoundation_64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>PhysXFoundation_64.dll;PhysXCommon_64.dll</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/profile/PhysX_64.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/profile/PhysX_64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /d2Zi+</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>Cdecl</CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4514;4820;4127;4710;4711;4577;4996</DisableSpecificWarnings>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <OmitFramePointers>true</OmitFramePointers>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <StringPooling>true</StringPooling>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN32;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_SUPPORT_PVD=0;CMAKE_INTDIR="release";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\PhysX_64.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_HAS_ITERATOR_DEBUGGING=0;_ITERATOR_DEBUG_LEVEL=0;NDEBUG;WIN64;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_WINSOCK_DEPRECATED_NO_WARNINGS;PX_PHYSX_FOUNDATION_EXPORTS;PX_PHYSX_CORE_EXPORTS;PX_PHYSX_GPU_SHARED_LIB_NAME=PhysXGpu_64.dll;PX_SUPPORT_PVD=0;CMAKE_INTDIR=\"release\";PhysX_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>m:\xrc\eng5-mpx\ext\src\physx\physx\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\common\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxgpu\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\contact;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\common;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\distance;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\sweep;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\gjk;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\intersection;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\hf;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\pcm;m:\xrc\eng5-mpx\ext\src\physx\physx\source\geomutils\src\ccd;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\api\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\software\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevel\common\include\pipeline;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowlevelaabb\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\lowleveldynamics\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\simulationcontroller\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\mesh;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxcooking\src\convex;m:\xrc\eng5-mpx\ext\src\physx\physx\source\scenequery\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\pvd\include;m:\xrc\eng5-mpx\ext\src\physx\physx\..\pxshared\include;m:\xrc\eng5-mpx\ext\src\physx\physx\source\foundation\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\LowLevel_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\LowLevelAABB_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\LowLevelDynamics_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\PhysXTask_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\SceneQuery_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\SimulationController_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\PhysXPvdSDK_static_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\PhysXCommon_64.lib;M:\xrc\eng5-mpx\ext\src\physx\physx\bin\win.x86_64.vc142.mt\release\PhysXFoundation_64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>PhysXFoundation_64.dll;PhysXCommon_64.dll</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/release/PhysX_64.lib</ImportLibrary>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ProgramDataBaseFile>M:/xrc/eng5-mpx/ext/src/physx/physx/bin/win.x86_64.vc142.mt/release/PhysX_64.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\CMakeLists.txt">
+      <StdOutEncoding>UTF-8</StdOutEncoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Building Custom Rule M:/xrc/eng5-mpx/ext/src/physx/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='debug|x64'">setlocal
+C:\sw\cmake\bin\cmake.exe -SM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/public -BM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64 --check-stamp-file M:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\GetCompilerAndPlatform.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\NvidiaBuildOptions.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\SetOutputPaths.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\template\PxIncludeTemplate.h;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SimulationController.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\CMakeLists.txt;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='debug|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='checked|x64'">Building Custom Rule M:/xrc/eng5-mpx/ext/src/physx/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='checked|x64'">setlocal
+C:\sw\cmake\bin\cmake.exe -SM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/public -BM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64 --check-stamp-file M:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\GetCompilerAndPlatform.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\NvidiaBuildOptions.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\SetOutputPaths.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\template\PxIncludeTemplate.h;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SimulationController.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\CMakeLists.txt;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='checked|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='checked|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='profile|x64'">Building Custom Rule M:/xrc/eng5-mpx/ext/src/physx/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='profile|x64'">setlocal
+C:\sw\cmake\bin\cmake.exe -SM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/public -BM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64 --check-stamp-file M:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\GetCompilerAndPlatform.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\NvidiaBuildOptions.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\SetOutputPaths.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\template\PxIncludeTemplate.h;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SimulationController.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\CMakeLists.txt;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='profile|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='profile|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='release|x64'">Building Custom Rule M:/xrc/eng5-mpx/ext/src/physx/physx/source/compiler/cmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='release|x64'">setlocal
+C:\sw\cmake\bin\cmake.exe -SM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/public -BM:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64 --check-stamp-file M:/xrc/eng5-mpx/ext/src/physx/physx/compiler/vc16win64/sdk_source_bin/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\GetCompilerAndPlatform.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\NvidiaBuildOptions.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\SetOutputPaths.cmake;M:\xrc\eng5-mpx\ext\src\physx\externals\cmakemodules\template\PxIncludeTemplate.h;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\SimulationController.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\CMakeLists.txt;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\FastXml.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevel.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelAABB.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\LowLevelDynamics.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysX.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCharacterKinematic.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCommon.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXCooking.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXExtensions.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXFoundation.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXPvdSDK.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXTask.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\PhysXVehicle.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SceneQuery.cmake;M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\cmake\windows\SimulationController.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='release|x64'">M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='release|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxActor.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxAggregate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxArticulationReducedCoordinate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxArticulationBase.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxArticulation.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxArticulationJoint.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxArticulationJointReducedCoordinate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxArticulationLink.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxBatchQuery.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxBatchQueryDesc.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxBroadPhase.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxClient.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxConstraint.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxConstraintDesc.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxContact.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxContactModifyCallback.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxDeletionListener.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxFiltering.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxForceMode.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxImmediateMode.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxLockedData.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxMaterial.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxPhysics.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxPhysicsAPI.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxPhysicsSerialization.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxPhysicsVersion.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxPhysXConfig.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxPruningStructure.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxQueryFiltering.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxQueryReport.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxRigidActor.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxRigidBody.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxRigidDynamic.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxRigidStatic.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxScene.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxSceneDesc.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxSceneLock.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxShape.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxSimulationEventCallback.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxSimulationStatistics.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\PxVisualizationParameter.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxBase.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxCollection.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxCoreUtilityTypes.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxMetaData.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxMetaDataFlags.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxPhysicsInsertionCallback.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxPhysXCommonConfig.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxRenderBuffer.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxSerialFramework.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxSerializer.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxStringTable.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxTolerancesScale.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxTypeInfo.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\PxProfileZone.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\pvd\PxPvdSceneClient.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\pvd\PxPvd.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\pvd\PxPvdTransport.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\solver\PxSolverDefs.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PvdMetaDataDefineProperties.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PvdMetaDataExtensions.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PvdMetaDataPropertyVisitor.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PxAutoGeneratedMetaDataObjectNames.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PxAutoGeneratedMetaDataObjects.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PxMetaDataCompare.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PxMetaDataCppPrefix.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\PxMetaDataObjects.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\include\RepXMetaDataPropertyVisitor.h" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\src\PxAutoGeneratedMetaDataObjects.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physxmetadata\core\src\PxMetaDataObjects.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpActor.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpAggregate.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationReducedCoordinate.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulation.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationJoint.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationJointReducedCoordinate.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationLink.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpBatchQuery.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpConstraint.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpFactory.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpMaterial.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpMetaData.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpPhysics.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpPvdSceneQueryCollector.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpReadCheck.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpRigidDynamic.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpRigidStatic.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpScene.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpSceneQueries.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpSerializerAdapter.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpShape.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpShapeManager.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpWriteCheck.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\PvdMetaDataPvdBinding.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\PvdPhysicsClient.cpp" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpActor.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpActorTemplate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpAggregate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationReducedCoordinate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulation.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationJoint.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationJointReducedCoordinate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationLink.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpArticulationTemplate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpBatchQuery.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpCast.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpConnector.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpConstraint.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpFactory.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpMaterial.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpMaterialManager.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpPhysics.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpPhysicsInsertionCallback.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpPtrTableStorageManager.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpPvdSceneQueryCollector.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpQueryShared.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpReadCheck.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpRigidActorTemplate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpRigidActorTemplateInternal.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpRigidBodyTemplate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpRigidDynamic.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpRigidStatic.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpScene.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpSceneQueries.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpSceneAccessor.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpShape.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpShapeManager.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\NpWriteCheck.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\PvdMetaDataBindingData.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\PvdMetaDataPvdBinding.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\PvdPhysicsClient.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\PvdTypeNames.h" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbActor.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbAggregate.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbBase.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbMetaData.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbScene.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbScenePvdClient.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbShape.cpp" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbActor.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbAggregate.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbArticulation.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbArticulationJoint.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbBase.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbBody.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbConstraint.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbDefs.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbNpDeps.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbRigidObject.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbRigidStatic.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbScene.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbSceneBuffer.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbScenePvdClient.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbShape.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\buffering\ScbType.h" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\immediatemode\src\NpImmediateMode.cpp" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\gpu\PxGpu.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\cudamanager\PxCudaContextManager.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\cudamanager\PxCudaMemoryManager.h" />
+    <ResourceCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\resource_x64\PhysX.rc" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\compiler\resource_x64\resource.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\include\common\windows\PxWindowsDelayLoadHook.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device\nvPhysXtoDrv.h" />
+    <ClInclude Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device\PhysXIndicator.h" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\device\windows\PhysXIndicatorWindows.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\gpu\PxGpu.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\gpu\PxPhysXGpuModuleLoader.cpp" />
+    <ClCompile Include="M:\xrc\eng5-mpx\ext\src\physx\physx\source\physx\src\windows\NpWindowsDelayLoadHook.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\ZERO_CHECK.vcxproj">
+      <Project>{26441C9F-3F0F-37EE-BE8A-549632F819F2}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\LowLevel.vcxproj">
+      <Project>{AEEE7DA4-BA6A-3727-94CD-8778A74B71AB}</Project>
+      <Name>LowLevel</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\LowLevelAABB.vcxproj">
+      <Project>{CFBDE9D4-312E-3574-A4EE-CA1357A6566F}</Project>
+      <Name>LowLevelAABB</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\LowLevelDynamics.vcxproj">
+      <Project>{26BA929D-0E0D-3FBD-ACD8-B437B5A1327F}</Project>
+      <Name>LowLevelDynamics</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\PhysXCommon.vcxproj">
+      <Project>{88ECA1EC-DA34-39C5-AB21-D1C5B3C280D5}</Project>
+      <Name>PhysXCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\PhysXFoundation.vcxproj">
+      <Project>{FFB2A466-5CD7-3987-A853-6C317AEFAE84}</Project>
+      <Name>PhysXFoundation</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\PhysXPvdSDK.vcxproj">
+      <Project>{6E2D85F7-CC5D-377A-85B1-37E902A76394}</Project>
+      <Name>PhysXPvdSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\PhysXTask.vcxproj">
+      <Project>{FC16D007-ACA4-3A63-948E-A878C3FF7938}</Project>
+      <Name>PhysXTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\SceneQuery.vcxproj">
+      <Project>{F9182345-0E36-395A-99F1-369F7E5A4D8F}</Project>
+      <Name>SceneQuery</Name>
+    </ProjectReference>
+    <ProjectReference Include="M:\xrc\eng5-mpx\ext\src\physx\physx\compiler\vc16win64\sdk_source_bin\SimulationController.vcxproj">
+      <Project>{A03AFEB4-E386-3704-8037-C4575CBA0EC7}</Project>
+      <Name>SimulationController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

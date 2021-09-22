@@ -33,6 +33,7 @@
 
 #include "foundation/PxVec3.h"
 #include "foundation/PxQuat.h"
+#include "foundation/PxRootTransform.h"
 #include "foundation/PxTransform.h"
 #include "foundation/PxMemory.h"
 #include "PxvConfig.h"

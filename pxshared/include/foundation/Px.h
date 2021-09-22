@@ -63,6 +63,8 @@ class PxMat33;
 class PxMat44;
 class PxPlane;
 class PxQuat;
+class PxPos;
+class PxRootTransform;
 class PxTransform;
 class PxBounds3;
 

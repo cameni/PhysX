@@ -34,6 +34,7 @@
 #include "foundation/PxVec3.h"
 #include "foundation/PxQuat.h"
 #include "foundation/PxTransform.h"
+#include "foundation/PxRootTransform.h"
 #include "foundation/PxSimpleTypes.h"
 #include "PsIntrinsics.h"
 #include "PxRigidDynamic.h"
