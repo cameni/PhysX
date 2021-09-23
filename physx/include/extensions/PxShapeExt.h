@@ -62,7 +62,7 @@ public:
 
 	\return Global pose of shape.
 	*/
-	static PX_INLINE	PxTransform		getGlobalPose(const PxShape& shape, const PxRigidActor& actor)
+	static PX_INLINE	PxRootTransform		getGlobalPose(const PxShape& shape, const PxRigidActor& actor)
 	{
 		return actor.getGlobalPose() * shape.getLocalPose();
 	}

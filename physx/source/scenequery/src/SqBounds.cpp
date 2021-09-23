@@ -45,7 +45,7 @@ void Sq::computeStaticWorldAABB(PxBounds3& bounds, const Scb::Shape& scbShape, c
 {
 	const PxTransform& shape2Actor = scbShape.getShape2Actor();
 
-	PX_ALIGN(16, PxTransform) globalPose;
+	PX_ALIGN(16, PxRootTransform) globalPose;
 
 	Cm::getStaticGlobalPoseAligned(static_cast<const Scb::RigidStatic&>(scbActor).getActor2World(), shape2Actor, globalPose);
 	Gu::computeBounds(bounds, scbShape.getGeometry(), globalPose, 0.0f, NULL, SQ_PRUNER_INFLATION);

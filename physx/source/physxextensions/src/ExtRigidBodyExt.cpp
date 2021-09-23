@@ -390,7 +390,7 @@ PxMassProperties PxRigidBodyExt::computeMassPropertiesFromShapes(const PxShape* 
 	return PxMassProperties::sum(massProps.begin(), localTransforms.begin(), shapeCount);
 }
 
-PX_INLINE void addForceAtPosInternal(PxRigidBody& body, const PxVec3& force, const PxVec3& pos, PxForceMode::Enum mode, bool wakeup)
+PX_INLINE void addForceAtPosInternal(PxRigidBody& body, const PxVec3& force, const PxPos& pos, PxForceMode::Enum mode, bool wakeup)
 {
 	if(mode == PxForceMode::eACCELERATION || mode == PxForceMode::eVELOCITY_CHANGE)
 	{
@@ -400,14 +400,14 @@ PX_INLINE void addForceAtPosInternal(PxRigidBody& body, const PxVec3& force, con
 	}
 
 	const PxTransform globalPose = body.getGlobalPose();
-	const PxVec3 centerOfMass = globalPose.transform(body.getCMassLocalPose().p);
+	const PxPos centerOfMass = globalPose.transform(body.getCMassLocalPose().p);
 
 	const PxVec3 torque = (pos - centerOfMass).cross(force);
 	body.addForce(force, mode, wakeup);
 	body.addTorque(torque, mode, wakeup);
 }
 
-void PxRigidBodyExt::addForceAtPos(PxRigidBody& body, const PxVec3& force, const PxVec3& pos, PxForceMode::Enum mode, bool wakeup)
+void PxRigidBodyExt::addForceAtPos(PxRigidBody& body, const PxVec3& force, const PxPos& pos, PxForceMode::Enum mode, bool wakeup)
 {
 	addForceAtPosInternal(body, force, pos, mode, wakeup);
 }
@@ -420,7 +420,7 @@ void PxRigidBodyExt::addForceAtLocalPos(PxRigidBody& body, const PxVec3& force, 
 	addForceAtPosInternal(body, force, globalForcePos, mode, wakeup);
 }
 
-void PxRigidBodyExt::addLocalForceAtPos(PxRigidBody& body, const PxVec3& force, const PxVec3& pos, PxForceMode::Enum mode, bool wakeup)
+void PxRigidBodyExt::addLocalForceAtPos(PxRigidBody& body, const PxVec3& force, const PxPos& pos, PxForceMode::Enum mode, bool wakeup)
 {
 	const PxVec3 globalForce = body.getGlobalPose().rotate(force);
 
@@ -444,11 +444,20 @@ PX_INLINE PxVec3 getVelocityAtPosInternal(const PxRigidBody& body, const PxVec3&
 	return velocity;
 }
 
-PxVec3 PxRigidBodyExt::getVelocityAtPos(const PxRigidBody& body, const PxVec3& point)
+PxVec3 PxRigidBodyExt::getVelocityAtPos(const PxRigidBody& body, const PxPos& point)
 {
-	const PxTransform globalPose = body.getGlobalPose();
-	const PxVec3 centerOfMass    = globalPose.transform(body.getCMassLocalPose().p);
+	const PxRootTransform globalPose = body.getGlobalPose();
+	const PxPos centerOfMass    = globalPose.transform(body.getCMassLocalPose().p);
 	const PxVec3 rpoint          = point - centerOfMass;
+
+	return getVelocityAtPosInternal(body, rpoint);
+}
+
+PxVec3 PxRigidBodyExt::getVelocityAtRelPos(const PxRigidBody& body, const PxVec3& relpoint)
+{
+	const PxRootTransform globalPose = body.getGlobalPose();
+	const PxVec3 centerOfMass = globalPose.rotate(body.getCMassLocalPose().p);
+	const PxVec3 rpoint = point - centerOfMass;
 
 	return getVelocityAtPosInternal(body, rpoint);
 }

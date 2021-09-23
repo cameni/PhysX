@@ -56,7 +56,7 @@ struct RigidStaticBuffer : public RigidObjectBuffer
 	// regular attributes
 	enum { BF_Base = RigidObjectBuffer::AttrCount };
 //	SCB_REGULAR_ATTRIBUTE(BF_Base,	PxTransform,	Actor2World)
-	SCB_REGULAR_ATTRIBUTE_ALIGNED(BF_Base,			PxTransform,		Actor2World, 16)
+	SCB_REGULAR_ATTRIBUTE_ALIGNED(BF_Base,			PxRootTransform,		Actor2World, 16)
 #endif
 };
 
@@ -87,8 +87,8 @@ public:
 #ifdef USE_NEW_SYSTEM
 	SCB_MEMBER(RigidStatic, mStatic, Actor2World, const PxTransform&, RigidObjectBuffer::AttrCount)
 #else
-	PX_INLINE		const PxTransform&	getActor2World() const					{ return read<Buf::BF_Actor2World>(); }
-	PX_INLINE		void				setActor2World(const PxTransform& m)	{ write<Buf::BF_Actor2World>(m); }
+	PX_INLINE		const PxRootTransform&	getActor2World() const					{ return read<Buf::BF_Actor2World>(); }
+	PX_INLINE		void				setActor2World(const PxRootTransform& m)	{ write<Buf::BF_Actor2World>(m); }
 #endif
 
 	PX_FORCE_INLINE void				onOriginShift(const PxVec3& shift)		{ mStatic.onOriginShift(shift); }

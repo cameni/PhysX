@@ -110,7 +110,7 @@ struct PxContact
 	/**
 	\brief Contact point in world space
 	*/
-	PxVec3	contact;							//12
+	PxPos	contact;							//12
 	/**
 	\brief Separation value (negative implies penetration).
 	*/
@@ -430,7 +430,7 @@ struct PxContactStreamIterator
 	\brief Gets the contact's contact point.
 	\return The contact's contact point.
 	*/
-	PX_CUDA_CALLABLE PX_FORCE_INLINE const PxVec3& getContactPoint() const
+	PX_CUDA_CALLABLE PX_FORCE_INLINE const PxPos& getContactPoint() const
 	{
 		return contact->contact;
 	}

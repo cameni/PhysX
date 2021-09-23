@@ -199,7 +199,7 @@ bool PxGeometryQuery::overlap(	const PxGeometry& geom0, const PxTransform& pose0
 
 ///////////////////////////////////////////////////////////////////////////////
 PxU32 PxGeometryQuery::raycast(	const PxVec3& rayOrigin, const PxVec3& rayDir,
-								const PxGeometry& geom, const PxTransform& pose,
+								const PxGeometry& geom, const PxRootTransform& pose,
 								PxReal maxDist, PxHitFlags hitFlags,
 								PxU32 maxHits, PxRaycastHit* PX_RESTRICT rayHits)
 {

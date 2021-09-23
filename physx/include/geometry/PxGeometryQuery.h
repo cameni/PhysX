@@ -137,7 +137,7 @@ public:
 	PX_PHYSX_COMMON_API static PxU32 raycast(const PxVec3& origin,
 							const PxVec3& unitDir,
 							const PxGeometry& geom,
-							const PxTransform& pose,
+							const PxRootTransform& pose,
 							PxReal maxDist,
 							PxHitFlags hitFlags,
 							PxU32 maxHits,

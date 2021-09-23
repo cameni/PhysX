@@ -249,7 +249,7 @@ public:
 	@see PxForceMode 
 	@see addForceAtPos() addForceAtLocalPos() addLocalForceAtLocalPos()
 	*/
-	static		void			addLocalForceAtPos(PxRigidBody& body, const PxVec3& force, const PxVec3& pos, PxForceMode::Enum mode = PxForceMode::eFORCE, bool wakeup = true);
+	static		void			addLocalForceAtPos(PxRigidBody& body, const PxVec3& force, const PxPos& pos, PxForceMode::Enum mode = PxForceMode::eFORCE, bool wakeup = true);
 
 	/**
 	\brief Applies a force (or impulse) defined in the actor local coordinate frame, acting at a 
@@ -280,7 +280,19 @@ public:
 	static		void			addLocalForceAtLocalPos(PxRigidBody& body, const PxVec3& force, const PxVec3& pos, PxForceMode::Enum mode = PxForceMode::eFORCE, bool wakeup = true);
 
 	/**
-	\brief Computes the velocity of a point given in world coordinates if it were attached to the 
+	\brief Computes the velocity of a point given in relative coordinates to the 
+	specified body and moving with it.
+
+	\param[in] body The rigid body the point is attached to.
+	\param[in] pos Position we wish to determine the velocity for, defined relative to the body but in the global frame. <b>Range:</b> position vector
+	\return The velocity of point in the global frame.
+
+	@see getLocalPointVelocity()
+	*/
+	static		PxVec3			getVelocityAtRelPos(const PxRigidBody& body, const PxVec3& relpos);
+
+	/**
+	\brief Computes the velocity of a point given in world coordinates if it were attached to the
 	specified body and moving with it.
 
 	\param[in] body The rigid body the point is attached to.
@@ -289,7 +301,7 @@ public:
 
 	@see getLocalPointVelocity()
 	*/
-	static		PxVec3			getVelocityAtPos(const PxRigidBody& body, const PxVec3& pos);
+	static		PxVec3			getVelocityAtPos(const PxRigidBody& body, const PxPos& pos);
 
 	/**
 	\brief Computes the velocity of a point given in local coordinates if it were attached to the 

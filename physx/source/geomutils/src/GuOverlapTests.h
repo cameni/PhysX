@@ -71,8 +71,8 @@ namespace Gu
 	// \param[in]	geom1	second geometry object
 	// \param[in]	pose1	pose of second geometry object
 	// \param[in]	cache	optional cached data for triggers
-	#define GU_OVERLAP_FUNC_PARAMS	const PxGeometry& geom0, const PxTransform& pose0,	\
-									const PxGeometry& geom1, const PxTransform& pose1,	\
+	#define GU_OVERLAP_FUNC_PARAMS	const PxGeometry& geom0, const PxRootTransform& pose0,	\
+									const PxGeometry& geom1, const PxRootTransform& pose1,	\
 									Gu::TriggerCache* cache
 
 	// PT: function pointer for Geom-indexed overlap functions
@@ -89,8 +89,8 @@ namespace Gu
 	// dynamic registration of height fields
 	PX_PHYSX_COMMON_API void registerHeightFields();
 
-	PX_FORCE_INLINE bool overlap(	const PxGeometry& geom0, const PxTransform& pose0,
-									const PxGeometry& geom1, const PxTransform& pose1,
+	PX_FORCE_INLINE bool overlap(	const PxGeometry& geom0, const PxRootTransform& pose0,
+									const PxGeometry& geom1, const PxRootTransform& pose1,
 									const GeomOverlapTable* PX_RESTRICT overlapFuncs)
 	{
 		PX_CHECK_AND_RETURN_VAL(pose0.isValid(), "Gu::overlap(): pose0 is not valid.", false);

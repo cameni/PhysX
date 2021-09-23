@@ -49,7 +49,7 @@ namespace physx
 	// \param[in]	hitFlags	query behavior flags
 	// \param[in]	maxHits		max number of hits = size of 'hits' buffer
 	// \param[out]	hits		result buffer where to write raycast hits
-	#define GU_RAY_FUNC_PARAMS	const PxGeometry& geom, const PxTransform& pose,					\
+	#define GU_RAY_FUNC_PARAMS	const PxGeometry& geom, const PxRootTransform& pose,				\
 								const PxVec3& rayOrigin, const PxVec3& rayDir, PxReal maxDist,		\
 								PxHitFlags hitFlags, PxU32 maxHits, PxRaycastHit* PX_RESTRICT hits
 	namespace Gu

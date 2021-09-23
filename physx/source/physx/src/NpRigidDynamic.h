@@ -81,7 +81,7 @@ public:
 		const Scb::Body& body=getScbBodyFast();
 		return body.getBody2World() * body.getBody2Actor().getInverse();
 	}
-	virtual		PxTransform			getGlobalPose() const
+	virtual		PxRootTransform		getGlobalPose() const
 	{
 		NP_READ_CHECK(NpActor::getOwnerScene(*this));
 		return getGlobalPoseFast();

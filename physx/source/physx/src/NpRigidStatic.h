@@ -78,13 +78,13 @@ public:
 	//---------------------------------------------------------------------------------
 
 	// Pose
-	virtual			void 					setGlobalPose(const PxTransform& pose, bool wake);
-	virtual			PxTransform				getGlobalPose() const;
+	virtual			void 					setGlobalPose(const PxRootTransform& pose, bool wake);
+	virtual			PxRootTransform			getGlobalPose() const;
 
 	//---------------------------------------------------------------------------------
 	// Miscellaneous
 	//---------------------------------------------------------------------------------
-											NpRigidStatic(const PxTransform& pose);
+											NpRigidStatic(const PxRootTransform& pose);
 
 	virtual			void					switchToNoSim();
 	virtual			void					switchFromNoSim();
@@ -102,7 +102,7 @@ public:
 	static PX_FORCE_INLINE size_t			getScbRigidStaticOffset()		{ return PX_OFFSET_OF_RT(NpRigidStatic, mRigidStatic); }
 	static PX_FORCE_INLINE size_t			getNpShapeManagerOffset()		{ return PX_OFFSET_OF_RT(NpRigidStatic, mShapeManager); }
 
-	PX_FORCE_INLINE	const PxTransform&		getGlobalPoseFast()		const	{ return mRigidStatic.getActor2World();	}
+	PX_FORCE_INLINE	const PxRootTransform&	getGlobalPoseFast()		const	{ return mRigidStatic.getActor2World();	}
 
 #if PX_ENABLE_DEBUG_VISUALIZATION
 public:

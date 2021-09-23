@@ -91,24 +91,24 @@ public:
 		return p == t.p && q == t.q;
 	}
 
-	PX_CUDA_CALLABLE PX_FORCE_INLINE PxRootTransform operator*(const PxRootTransform& x) const
+	PX_CUDA_CALLABLE PX_FORCE_INLINE PxRootTransform operator*(const PxTransform& x) const
 	{
 		PX_SHARED_ASSERT(x.isSane());
-		return childTransform(x);// transform(x);
+		return transform(x);
 	}
 
 	//! Equals matrix multiplication
-	PX_CUDA_CALLABLE PX_INLINE PxRootTransform& operator*=(PxRootTransform& other)
+	PX_CUDA_CALLABLE PX_INLINE PxRootTransform& operator*=(PxTransform& other)
 	{
 		*this = *this * other;
 		return *this;
 	}
 
-	PX_CUDA_CALLABLE PX_FORCE_INLINE PxRootTransform getInverse() const
-	{
-		PX_SHARED_ASSERT(isFinite());
-		return PxRootTransform(q.rotateInv(-p), q.getConjugate());
-	}
+	//PX_CUDA_CALLABLE PX_FORCE_INLINE PxRootTransform getInverse() const
+	//{
+	//	PX_SHARED_ASSERT(isFinite());
+	//	return PxRootTransform(q.rotateInv(-p), q.getConjugate());
+	//}
 
 	PX_CUDA_CALLABLE PX_FORCE_INLINE PxPos transform(const PxVec3& input) const
 	{
@@ -135,21 +135,12 @@ public:
 	}
 
 	//! Transform transform to parent (returns compound transform: first src, then *this)
-	//PX_CUDA_CALLABLE PX_FORCE_INLINE PxTransform transform(const PxTransform& src) const
-	//{
-	//	PX_SHARED_ASSERT(src.isSane());
-	//	PX_SHARED_ASSERT(isSane());
-	//	// src = [srct, srcr] -> [r*srct + t, r*srcr]
-	//	return PxTransform(q.rotate(src.p) + p, q * src.q);
-	//}
-
-	//! Transform child transform to this (returns compound transform: first *this, then child)
-	PX_CUDA_CALLABLE PX_FORCE_INLINE PxRootTransform childTransform(const PxTransform& child) const
+	PX_CUDA_CALLABLE PX_FORCE_INLINE PxRootTransform transform(const PxTransform& src) const
 	{
-		PX_SHARED_ASSERT(child.isSane());
+		PX_SHARED_ASSERT(src.isSane());
 		PX_SHARED_ASSERT(isSane());
 		// src = [srct, srcr] -> [r*srct + t, r*srcr]
-		return PxRootTransform(p + q.rotate(child.p), child.q * q);
+		return PxRootTransform(p + q.rotate(src.p), q * src.q);
 	}
 
 	/**

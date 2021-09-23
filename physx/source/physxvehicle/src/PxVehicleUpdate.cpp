@@ -28,6 +28,7 @@
 // Copyright (c) 2001-2004 NovodeX AG. All rights reserved.  
 
 #include "foundation/PxQuat.h"
+#include "foundation/PxRootTransform.h"
 #include "common/PxProfileZone.h"
 #include "common/PxTolerancesScale.h"
 #include "vehicle/PxVehicleUpdate.h"
@@ -440,7 +441,7 @@ PxU32 PxVehicleModifyWheelContacts
 	const PxRigidDynamic* vehActor = vehicle.getRigidDynamicActor();
 
 	//Is the vehicle represented by actor[0] or actor[1]?
-	PxTransform vehActorTransform;
+	PxRootTransform vehActorTransform;
 	PxTransform vehWheelTransform;
 	PxF32 normalMultiplier;
 	PxF32 targetVelMultiplier;
@@ -493,12 +494,12 @@ PxU32 PxVehicleModifyWheelContacts
 	for(PxU32 i = 0; i < numContacts; i++)
 	{
 		//Get the next contact point to analyse.
-		const PxVec3& contactPoint = contactSet.getPoint(i);
+		const PxPos& contactPoint = contactSet.getPoint(i);
 		bool ignorePoint = false;
 
 		//Project the contact point on to the wheel plane.
-		const PxF32 distanceToPlane = wheelPlane.n.dot(contactPoint) + wheelPlane.d;
-		const PxVec3 contactPointOnPlane = contactPoint - wheelPlane.n*distanceToPlane;
+		const PxPos::float_type distanceToPlane = contactPoint.dot(wheelPlane.n) + wheelPlane.d;
+		const PxVec3 contactPointOnPlane = contactPoint - PxPos(wheelPlane.n, distanceToPlane);
 
 		//Construct a vector from the wheel centre to the contact point on the plane.
 		PxVec3 dir = contactPointOnPlane - wheelCentre;
@@ -560,7 +561,7 @@ PxU32 PxVehicleModifyWheelContacts
 			}
 
 			//Set the contact point to be the suspension force application point because all forces applied through the wheel go through the suspension geometry.
-			const PxVec3 suspAppPoint = vehActorTransform.transform(vehActor->getCMassLocalPose().p + vehicle.mWheelsSimData.getSuspForceAppPointOffset(wheelId));
+			const PxPos suspAppPoint = vehActorTransform.transform(vehActor->getCMassLocalPose().p + vehicle.mWheelsSimData.getSuspForceAppPointOffset(wheelId));
 			contactSet.setPoint(i, suspAppPoint);
 		}
 	}					
@@ -730,8 +731,8 @@ struct VehicleTelemetryDataContext
 {
 	PxF32 wheelGraphData[PX_MAX_NB_WHEELS][PxVehicleWheelGraphChannel::eMAX_NB_WHEEL_CHANNELS];
 	PxF32 engineGraphData[PxVehicleDriveGraphChannel::eMAX_NB_DRIVE_CHANNELS];
-	PxVec3 suspForceAppPoints[PX_MAX_NB_WHEELS];
-	PxVec3 tireForceAppPoints[PX_MAX_NB_WHEELS];
+	PxVec3 suspForceRelAppPoints[PX_MAX_NB_WHEELS];
+	PxVec3 tireForceRelAppPoints[PX_MAX_NB_WHEELS];
 };
 
 PX_FORCE_INLINE void updateGraphDataInternalWheelDynamics(const PxU32 startIndex, const PxF32* carWheelSpeeds, 
@@ -1107,34 +1108,36 @@ private:
 ////////////////////////////////////////////////////////////////////////////
 
 PX_INLINE void computeSuspensionRaycast
-(const PxTransform& carChassisTrnsfm, const PxVec3& bodySpaceWheelCentreOffset, const PxVec3& bodySpaceSuspTravelDir, const PxF32 radius, const PxF32 maxBounce,
- PxVec3& suspLineStart, PxVec3& suspLineDir)
+(const PxRootTransform& carChassisTrnsfm, const PxVec3& bodySpaceWheelCentreOffset, const PxVec3& bodySpaceSuspTravelDir, const PxF32 radius, const PxF32 maxBounce,
+ PxVec3& suspLineStartRel, PxVec3& suspLineDir)
 {
 	//Direction of raycast.
 	suspLineDir=carChassisTrnsfm.rotate(bodySpaceSuspTravelDir);
 
 	//Position at top of wheel at maximum compression.
-	suspLineStart=carChassisTrnsfm.transform(bodySpaceWheelCentreOffset);
-	suspLineStart-=suspLineDir*(radius+maxBounce);
+	//suspLineStart=carChassisTrnsfm.transform(bodySpaceWheelCentreOffset);
+	suspLineStartRel = carChassisTrnsfm.rotate(bodySpaceWheelCentreOffset);
+	suspLineStartRel -= suspLineDir*(radius+maxBounce);
 }
 
 PX_INLINE void computeSuspensionSweep
-(const PxTransform& carChassisTrnsfm, 
+(const PxRootTransform& carChassisTrnsfm, 
  const PxQuat& wheelLocalPoseRotation, const PxF32 wheelTheta, 
  const PxVec3 bodySpaceWheelCentreOffset, const PxVec3& bodySpaceSuspTravelDir, const PxF32 radius, const PxF32 maxBounce,
- PxTransform& suspStartPose, PxVec3& suspLineDir)
+ PxTransform& suspStartPoseRel, PxVec3& suspLineDir)
 {
 	//Direction of raycast.
 	suspLineDir=carChassisTrnsfm.rotate(bodySpaceSuspTravelDir);
 
 	//Position of wheel at maximum compression.
-	suspStartPose.p = carChassisTrnsfm.transform(bodySpaceWheelCentreOffset);
-	suspStartPose.p -= suspLineDir*(radius + maxBounce);
+	//suspStartPose.p = carChassisTrnsfm.transform(bodySpaceWheelCentreOffset);
+	suspStartPoseRel.p = carChassisTrnsfm.rotate(bodySpaceWheelCentreOffset);
+	suspStartPoseRel.p -= suspLineDir*(radius + maxBounce);
 
 	//Rotation of wheel.
 	const PxVec3 right = wheelLocalPoseRotation.rotate(gRight);
 	const PxQuat negativeRotation(-wheelTheta, right);
-	suspStartPose.q = carChassisTrnsfm.q*(negativeRotation*wheelLocalPoseRotation);
+	suspStartPoseRel.q = carChassisTrnsfm.q*(negativeRotation*wheelLocalPoseRotation);
 }
 
 
@@ -1152,7 +1155,7 @@ PX_INLINE void computeSuspensionSweep
 
 PX_INLINE void integrateBody
 (const PxF32 inverseMass, const PxVec3& invInertia, const PxVec3& force, const PxVec3& torque, const PxF32 dt,
- PxVec3& v, PxVec3& w, PxTransform& t)
+ PxVec3& v, PxVec3& w, PxRootTransform& t)
 {
 	//Integrate linear velocity.
 	v+=force*(inverseMass*dt);
@@ -2271,11 +2274,11 @@ void PxVehicleComputeTireForceDefault
 ////////////////////////////////////////////////////////////////////////////
 
 bool intersectRayPlane
-(const PxTransform& carChassisTrnsfm, 
+(const PxRootTransform& carChassisTrnsfm, 
  const PxVec3& bodySpaceWheelCentreOffset, const PxVec3& bodySpaceSuspTravelDir, 
  const PxF32 width, const PxF32 radius, const PxF32 maxCompression,
  const PxVec4& hitPlane,
- PxF32& jounce, PxVec3& wheelBottomPos)
+ PxF32& jounce, PxVec3& wheelBottomPosRel)
 {
     PX_UNUSED(width);	
 
@@ -2306,7 +2309,7 @@ bool intersectRayPlane
 
 	const PxVec3 n = PxVec3(hitPlane.x, hitPlane.y, hitPlane.z);
 	const PxF32 d = hitD;
-	const PxF32 T=-(n.dot(v) + d)/(n.dot(w));
+	const PxF32 T=-(v.dot(n) + d)/(n.dot(w));
 
 	//The rest pos of the susp line is 2*radius + maxBounce.
 	const PxF32 restT = 2.0f*radius+maxCompression;
@@ -2318,7 +2321,7 @@ bool intersectRayPlane
 
 	//Compute the bottom of the wheel.
 	//Always choose a point through the centre of the wheel.
-	wheelBottomPos = pos + w*(restT - jounce);
+	wheelBottomPosRel = pos + w*(restT - jounce);
 
 	return true;
 }
@@ -2523,7 +2526,7 @@ static bool intersectCylinderPlane
 }
 
 bool intersectCylinderPlane
-(const PxTransform& carChassisTrnsfm, 
+(const PxRootTransform& carChassisTrnsfm, 
  const PxQuat& wheelLocalPoseRotation, const PxF32 wheelTheta,
  const PxVec3& bodySpaceWheelCentreOffset, const PxVec3& bodySpaceSuspTravelDir, const PxF32 width, const PxF32 radius, const PxF32 maxCompression,
  const PxVec4& hitPlane,
@@ -2631,7 +2634,7 @@ public:
 
 	//Properties of the rigid body - transform.
 	//This data is actually logically constant.
-	PxTransform carChassisTrnsfm;
+	PxRootTransform carChassisTrnsfm;
 	//Properties of the rigid body - linear velocity.
 	//This data is actually logically constant.
 	PxVec3 carChassisLinVel;
@@ -2907,7 +2910,7 @@ static void processSuspTireWheels
 	const PxF32* PX_RESTRICT tireRestLoads=wheelsSimData.getTireRestLoadsArray();
 	const PxF32* PX_RESTRICT recipTireRestLoads=wheelsSimData.getRecipTireRestLoadsArray();
 	//Compute the right direction for later.
-	const PxTransform& carChassisTrnsfm=inputData.carChassisTrnsfm;
+	const PxRootTransform& carChassisTrnsfm=inputData.carChassisTrnsfm;
 	const PxVec3 latDir=inputData.carChassisTrnsfm.rotate(gRight);
 	//Unpack the linear and angular velocity of the rigid body.
 	const PxVec3& carChassisLinVel=inputData.carChassisLinVel;
@@ -3252,7 +3255,7 @@ static void processSuspTireWheels
 			PX_ASSERT(frictionMultiplier>=0);
 
 			PxF32 dx;
-			PxVec3 wheelBottomPos;
+			PxVec3 wheelBottomPosRel;
 			bool successIntersection = true;
 			if(0 == hitQueryTypes4[i])
 			{
@@ -3260,7 +3263,7 @@ static void processSuspTireWheels
 					(carChassisTrnsfm, 
 					 bodySpaceWheelCentreOffset, bodySpaceSuspTravelDir, wheel.mWidth, wheel.mRadius, susp.mMaxCompression, 
 					 hitPlanes4[i], 
-					 dx, wheelBottomPos);
+					 dx, wheelBottomPosRel);
 			}
 			else
 			{
@@ -3273,7 +3276,7 @@ static void processSuspTireWheels
 					 bodySpaceWheelCentreOffset, bodySpaceSuspTravelDir, wheel.mWidth, wheel.mRadius, susp.mMaxCompression, 
 					 hitPlanes4[i], 
 					 false, 
-					 dx, wheelBottomPos, hitContactPoints4[i], hitDistances4[i], useDirectSweepResults);
+					 dx, wheelBottomPosRel, hitContactPoints4[i], hitDistances4[i], useDirectSweepResults);
 			}
 
 			//If the spring is elongated past its max droop then the wheel isn't touching the ground.
@@ -3310,16 +3313,16 @@ static void processSuspTireWheels
 
 				//Compute the speed of the rigid body along the suspension travel dir at the 
 				//bottom of the wheel.
-				const PxVec3 r=wheelBottomPos-carChassisTrnsfm.p;
 				PxVec3 wheelBottomVel=carChassisLinVel;
-				wheelBottomVel+=carChassisAngVel.cross(r);
+				wheelBottomVel+=carChassisAngVel.cross(wheelBottomPosRel);
 
 				//Modify the relative velocity at the wheel contact point if the hit actor is a dynamic.
 				PxRigidDynamic* dynamicHitActor=NULL;
 				PxVec3 hitActorVelocity(0,0,0);
 				if(hitContactActors4[i] && ((dynamicHitActor = hitContactActors4[i]->is<PxRigidDynamic>()) != NULL))
 				{
-					hitActorVelocity = PxRigidBodyExt::getVelocityAtPos(*dynamicHitActor,wheelBottomPos);
+					//hitActorVelocity = PxRigidBodyExt::getVelocityAtPos(*dynamicHitActor,wheelBottomPos);
+					hitActorVelocity = PxRigidBodyExt::getVelocityAtRelPos(*dynamicHitActor, wheelBottomPosRel);
 					wheelBottomVel -= hitActorVelocity;
 				}
 
@@ -3607,8 +3610,8 @@ static void processSuspTireWheels
 #if PX_DEBUG_VEHICLE_ON
 						if (vehTelemetryDataContext)
 						{
-							vehTelemetryDataContext->tireForceAppPoints[i] = carChassisTrnsfm.p + tireForceCMOffset;
-							vehTelemetryDataContext->suspForceAppPoints[i] = carChassisTrnsfm.p + suspForceCMOffset;
+							vehTelemetryDataContext->tireForceRelAppPoints[i] = /*carChassisTrnsfm.p +*/ tireForceCMOffset;
+							vehTelemetryDataContext->suspForceRelAppPoints[i] = /*carChassisTrnsfm.p +*/ suspForceCMOffset;
 
 							updateGraphDataNormLongTireForce(startWheelIndex, i, PxAbs(tireLongForceMag)*normalisedTireLoad/tireLoad, vehTelemetryDataContext->wheelGraphData);
 							updateGraphDataNormLatTireForce(startWheelIndex, i, PxAbs(tireLatForceMag)*normalisedTireLoad/tireLoad, vehTelemetryDataContext->wheelGraphData);
@@ -3628,7 +3631,7 @@ static void processSuspTireWheels
 
 void procesAntiRollSuspension
 (const PxVehicleWheelsSimData& wheelsSimData, 
- const PxTransform& carChassisTransform, const PxWheelQueryResult* wheelQueryResults, 
+ const PxRootTransform& carChassisTransform, const PxWheelQueryResult* wheelQueryResults, 
  PxVec3& chassisTorque)
 {
 	const PxU32 numAntiRollBars = wheelsSimData.getNbAntiRollBars();
@@ -4714,7 +4717,7 @@ public:
 		PxVehicleNoDrive* vehDriveTank, PxVehicleWheelQueryResult* vehWheelQueryResults, PxVehicleConcurrentUpdateData* vehConcurrentUpdates,
 		VehicleTelemetryDataContext*);
 
-	static PxU32 computeNumberOfSubsteps(const PxVehicleWheelsSimData& wheelsSimData, const PxVec3& linVel, const PxTransform& globalPose, const PxVec3& forward)
+	static PxU32 computeNumberOfSubsteps(const PxVehicleWheelsSimData& wheelsSimData, const PxVec3& linVel, const PxRootTransform& globalPose, const PxVec3& forward)
 	{
 		const PxVec3 z=globalPose.q.rotate(forward);
 		const PxF32 vz=PxAbs(linVel.dot(z));
@@ -5033,8 +5036,8 @@ VehicleTelemetryDataContext* vehTelemetryDataContext)
 	//Center of mass local pose.
 	PxTransform carChassisCMLocalPose;
 	//Compute the transform of the center of mass.
-	PxTransform origCarChassisTransform;
-	PxTransform carChassisTransform;
+	PxRootTransform origCarChassisTransform;
+	PxRootTransform carChassisTransform;
 	//Inverse mass and inertia to apply the tire/suspension forces as impulses.
 	PxF32 inverseChassisMass;
 	PxVec3 inverseInertia;
@@ -5629,8 +5632,8 @@ void PxVehicleUpdate::updateDriveNW
 	//Center of mass local pose.
 	PxTransform carChassisCMLocalPose;
 	//Compute the transform of the center of mass.
-	PxTransform origCarChassisTransform;
-	PxTransform carChassisTransform;
+	PxRootTransform origCarChassisTransform;
+	PxRootTransform carChassisTransform;
 	//Inverse mass and inertia to apply the tire/suspension forces as impulses.
 	PxF32 inverseChassisMass;
 	PxVec3 inverseInertia;
@@ -6175,8 +6178,8 @@ void PxVehicleUpdate::updateTank
 	//Center of mass local pose.
 	PxTransform carChassisCMLocalPose;
 	//Compute the transform of the center of mass.
-	PxTransform origCarChassisTransform;
-	PxTransform carChassisTransform;
+	PxRootTransform origCarChassisTransform;
+	PxRootTransform carChassisTransform;
 	//Inverse mass and inertia to apply the tire/suspension forces as impulses.
 	PxF32 inverseChassisMass;
 	PxVec3 inverseInertia;
@@ -6645,8 +6648,8 @@ void PxVehicleUpdate::updateNoDrive
 	//Center of mass local pose.
 	PxTransform carChassisCMLocalPose;
 	//Compute the transform of the center of mass.
-	PxTransform origCarChassisTransform;
-	PxTransform carChassisTransform;
+	PxRootTransform origCarChassisTransform;
+	PxRootTransform carChassisTransform;
 	//Inverse mass and inertia to apply the tire/suspension forces as impulses.
 	PxF32 inverseChassisMass;
 	PxVec3 inverseInertia;
@@ -6937,8 +6940,8 @@ PX_FORCE_INLINE void PxVehicleUpdate::updateSingleVehicleAndStoreTelemetryData
 	VehicleTelemetryDataContext vehicleTelemetryDataContext;
 	PxMemZero(vehicleTelemetryDataContext.wheelGraphData, sizeof(vehicleTelemetryDataContext.wheelGraphData));
 	PxMemZero(vehicleTelemetryDataContext.engineGraphData, sizeof(vehicleTelemetryDataContext.engineGraphData));
-	PxMemZero(vehicleTelemetryDataContext.suspForceAppPoints, sizeof(vehicleTelemetryDataContext.suspForceAppPoints));
-	PxMemZero(vehicleTelemetryDataContext.tireForceAppPoints, sizeof(vehicleTelemetryDataContext.tireForceAppPoints));
+	PxMemZero(vehicleTelemetryDataContext.suspForceRelAppPoints, sizeof(vehicleTelemetryDataContext.suspForceRelAppPoints));
+	PxMemZero(vehicleTelemetryDataContext.tireForceRelAppPoints, sizeof(vehicleTelemetryDataContext.tireForceRelAppPoints));
 
 	update(timestep, gravity, vehicleDrivableSurfaceToTireFrictionPairs, 1, &vehWheels, vehWheelQueryResults, vehConcurrentUpdates,
 		&vehicleTelemetryDataContext);
@@ -6946,8 +6949,8 @@ PX_FORCE_INLINE void PxVehicleUpdate::updateSingleVehicleAndStoreTelemetryData
 	for(PxU32 i=0;i<vehWheels->mWheelsSimData.mNbActiveWheels;i++)
 	{
 		telemetryData.mWheelGraphs[i].updateTimeSlice(vehicleTelemetryDataContext.wheelGraphData[i]);
-		telemetryData.mSuspforceAppPoints[i]=vehicleTelemetryDataContext.suspForceAppPoints[i];
-		telemetryData.mTireforceAppPoints[i]=vehicleTelemetryDataContext.tireForceAppPoints[i];
+		telemetryData.mSuspforceAppPoints[i]=vehicleTelemetryDataContext.suspForceRelAppPoints[i];
+		telemetryData.mTireforceAppPoints[i]=vehicleTelemetryDataContext.tireForceRelAppPoints[i];
 	}
 	telemetryData.mEngineGraph->updateTimeSlice(vehicleTelemetryDataContext.engineGraphData);
 
@@ -7261,7 +7264,7 @@ void PxVehicleWheels4SuspensionRaycasts
 	//Get the transform of the chassis.
 	PxTransform massXform = vehActor->getCMassLocalPose();
 	massXform.q = PxQuat(PxIdentity);
-	PxTransform carChassisTrnsfm = vehActor->getGlobalPose().transform(massXform);
+	PxRootTransform carChassisTrnsfm = vehActor->getGlobalPose().transform(massXform);
 
 	//Add a raycast for each wheel.
 	for(PxU32 j=0;j<numActiveWheels;j++)
@@ -7426,7 +7429,7 @@ void PxVehicleWheels4SuspensionSweeps
 	PX_UNUSED(sweepRadiusScale);
 
 	//Get the transform of the chassis.
-	PxTransform carChassisTrnsfm=vehActor->getGlobalPose().transform(vehActor->getCMassLocalPose());
+	PxRootTransform carChassisTrnsfm=vehActor->getGlobalPose().transform(vehActor->getCMassLocalPose());
 
 	//Add a raycast for each wheel.
 	for(PxU32 j=0;j<numActiveWheels;j++)

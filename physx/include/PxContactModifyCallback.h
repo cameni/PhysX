@@ -66,14 +66,14 @@ public:
 
 	@see PxModifiableContact.point
 	*/
-	PX_FORCE_INLINE		const PxVec3& getPoint(PxU32 i) const			{ return mContacts[i].contact;		}
+	PX_FORCE_INLINE		const PxPos& getPoint(PxU32 i) const			{ return mContacts[i].contact;		}
 
 	/**
 	\brief Alter the position of a specific contact point in the set.
 
 	@see PxModifiableContact.point
 	*/
-	PX_FORCE_INLINE		void setPoint(PxU32 i, const PxVec3& p)			{ mContacts[i].contact = p; }
+	PX_FORCE_INLINE		void setPoint(PxU32 i, const PxPos& p)			{ mContacts[i].contact = p; }
 
 	/**
 	\brief Get the contact normal of a specific contact point in the set.

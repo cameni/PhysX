@@ -56,6 +56,9 @@ This is a 3-dimensional vector class with public data members.
 class PxPos
 {
   public:
+
+	using float_type = pfloat;
+
 	/**
 	\brief default constructor leaves data uninitialized.
 	*/
@@ -97,6 +100,13 @@ class PxPos
 	\brief Copy ctor.
 	*/
 	PX_CUDA_CALLABLE PX_FORCE_INLINE PxPos(const PxPos& v) : x(v.x), y(v.y), z(v.z)
+	{
+	}
+
+	/**
+	\brief Initialize from direction vector and distance.
+	*/
+	PX_CUDA_CALLABLE PX_FORCE_INLINE PxPos(const PxVec3& v, pfloat d) : x(v.x * d), y(v.y * d), z(v.z * d)
 	{
 	}
 

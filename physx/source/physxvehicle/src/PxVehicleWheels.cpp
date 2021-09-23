@@ -41,6 +41,8 @@
 #include "PsIntrinsics.h"
 #include "PsFoundation.h"
 
+#include "foundation/PxRootTransform.h"
+
 namespace physx
 {
 
@@ -810,13 +812,13 @@ void PxVehicleWheels::resolveReferences(PxDeserializationContext& context)
 
 PxReal PxVehicleWheels::computeForwardSpeed() const
 {
-	const PxTransform vehicleChassisTrnsfm=mActor->getGlobalPose().transform(mActor->getCMassLocalPose());
+	const PxRootTransform vehicleChassisTrnsfm=mActor->getGlobalPose().transform(mActor->getCMassLocalPose());
 	return mActor->getLinearVelocity().dot(vehicleChassisTrnsfm.q.rotate(gForward));
 }
 
 PxReal PxVehicleWheels::computeSidewaysSpeed() const
 {
-	const PxTransform vehicleChassisTrnsfm=mActor->getGlobalPose().transform(mActor->getCMassLocalPose());
+	const PxRootTransform vehicleChassisTrnsfm=mActor->getGlobalPose().transform(mActor->getCMassLocalPose());
 	return mActor->getLinearVelocity().dot(vehicleChassisTrnsfm.q.rotate(gRight));
 }
 

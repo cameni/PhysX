@@ -465,7 +465,7 @@ struct PxContactPairPoint
 	/**
 	\brief The position of the contact point between the shapes, in world space. 
 	*/
-	PxVec3	position;
+	PxPos	position;
 
 	/**
 	\brief The separation of the shapes at the contact point.  A negative separation denotes a penetration.
